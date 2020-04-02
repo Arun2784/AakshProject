@@ -1,0 +1,19 @@
+
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Aakash Website Project">
+
+
+	<test name="Aakash Website Project">
+
+
+		<classes>
+
+			<class name="com.aakash.qa.testcases.CoursePageTest" />
+
+
+
+		</classes>
+	</test>
+</suite>
