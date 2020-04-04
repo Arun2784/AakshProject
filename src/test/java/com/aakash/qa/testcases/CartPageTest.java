@@ -8,6 +8,7 @@ import com.aakash.qa.base.TestBase;
 import com.aakash.qa.pages.CartPage;
 import com.aakash.qa.pages.CoursesPage;
 import com.aakash.qa.pages.HomePage;
+import com.aakash.qa.pages.LoginPage;
 import com.aakash.qa.pages.SearchedCoursePage;
 import com.aakash.qa.utill.DataProviderClass;
 import com.aakash.qa.utill.TestUtilAakash;
@@ -15,7 +16,7 @@ import com.aakash.qa.utill.TestUtilAakash;
 public class CartPageTest extends TestBase {
 
 	
-	
+	LoginPage loginpage;
 	HomePage homePage;
 	CoursesPage coursesPage;
 	TestUtilAakash aakashutil;
@@ -44,6 +45,8 @@ public class CartPageTest extends TestBase {
 		coursesPage.clickonEngineering();
 		searchedPage = new SearchedCoursePage();
 		cartpage = new CartPage();
+		loginpage = new LoginPage();
+
 
 	}
 
@@ -55,7 +58,8 @@ public class CartPageTest extends TestBase {
 		coursesPage.clickOnSearchedCourses();
 		searchedPage.clickOnPayRegistration();
 		cartpage.clickOnProceedToCheckOut();
-		
+		loginpage.login(prop.getProperty("user_name"), prop.getProperty("password"));
+
 		System.out.println("Successfully reach on Login page");
 
 	}

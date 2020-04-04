@@ -5,7 +5,7 @@
     <classes>
       <class name="com.aakash.qa.testcases.LoginPageTest">
         <methods>
-          <include name="validateLoginPage" invocation-numbers="0"/>
+          <include name="validateLoginPage"/>
           <include name="setup"/>
           <include name="tearDown"/>
         </methods>

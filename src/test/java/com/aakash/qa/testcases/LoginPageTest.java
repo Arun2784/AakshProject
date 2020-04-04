@@ -15,14 +15,8 @@ import com.aakash.qa.utill.TestUtilAakash;
 
 public class LoginPageTest extends TestBase {
 
-	HomePage homePage;
-	CoursesPage coursesPage;
-	TestUtilAakash aakashutil;
-	static String sheetName1 = "Eng";
-	SearchedCoursePage searchedPage;
-	CartPage cartpage;
-	CartPageTest cartpagetets;
 	LoginPage loginpage;
+	TestUtilAakash aakashutil;
 
 	public LoginPageTest() throws InterruptedException {
 
@@ -35,30 +29,18 @@ public class LoginPageTest extends TestBase {
 
 		initialaztion();
 
-		homePage = new HomePage();
+		loginpage = new LoginPage();
 		aakashutil = new TestUtilAakash();
 		aakashutil.switchframe();
-		homePage.clickOnCrossIcon();
-		aakashutil.defaultframe();
-		homePage.clickOnCourseLink();
-		coursesPage = new CoursesPage();
-		coursesPage.clickonEngineering();
-		searchedPage = new SearchedCoursePage();
-		cartpage = new CartPage();
-		loginpage = new LoginPage();
 	}
-	
-	
 
-	@Test(priority = 1, dataProvider = "getEngineeringData", dataProviderClass = DataProviderClass.class)
-	public void validateLoginPage(String chooseClass, String chooseState, String chooseCenters)
-			throws InterruptedException {
+	@Test(priority = 1)
 
-		coursesPage.selectEngineeringcourses(chooseClass, chooseState, chooseCenters);
-		coursesPage.clickOnSearchedCourses();
-		searchedPage.clickOnPayRegistration();
-		cartpage.clickOnProceedToCheckOut();
+	public void validateLoginPage() {
+
 		loginpage.login(prop.getProperty("user_name"), prop.getProperty("password"));
+
+		System.out.println("successfully login");
 	}
 
 	@AfterMethod

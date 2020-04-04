@@ -2,54 +2,37 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="137734" started-at="2020-04-03T18:27:26 IST" finished-at="2020-04-03T18:29:44 IST">
+  <suite name="Default suite" duration-ms="36366" started-at="2020-04-04T12:41:47 IST" finished-at="2020-04-04T12:42:23 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="137734" started-at="2020-04-03T18:27:26 IST" finished-at="2020-04-03T18:29:44 IST">
+    <test name="Default test" duration-ms="36366" started-at="2020-04-04T12:41:47 IST" finished-at="2020-04-04T12:42:23 IST">
       <class name="com.aakash.qa.testcases.LoginPageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.aakash.qa.testcases.LoginPageTest@480bdb19]" name="setup" is-config="true" duration-ms="81760" started-at="2020-04-03T18:27:31 IST" finished-at="2020-04-03T18:28:52 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.aakash.qa.testcases.LoginPageTest@86be70a]" name="setup" is-config="true" duration-ms="20090" started-at="2020-04-04T12:41:47 IST" finished-at="2020-04-04T12:42:07 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="validateLoginPage(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.aakash.qa.testcases.LoginPageTest@480bdb19]" name="validateLoginPage" duration-ms="50697" started-at="2020-04-03T18:28:52 IST" data-provider="getEngineeringData" finished-at="2020-04-03T18:29:43 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[11]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Goa]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Goa - Margao]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="FAIL" signature="validateLoginPage()[pri:1, instance:com.aakash.qa.testcases.LoginPageTest@86be70a]" name="validateLoginPage" duration-ms="15269" started-at="2020-04-04T12:42:07 IST" finished-at="2020-04-04T12:42:22 IST">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='edit-name' and @name='name']"}
-  (Session info: chrome=80.0.3987.149)
+  (Session info: chrome=80.0.3987.163)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
-System info: host: 'CORPLPTP000053', ip: '10.81.235.56', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+System info: host: 'CORPLPTP000053', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\010645~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49621}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a3095b8fe1b95a100208d56d0128e7c1
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\010645~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59994}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 5ef34a8b33a78f18efc0e4a6ffa62a52
 *** Element info: {Using=xpath, value=//input[@id='edit-name' and @name='name']}]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='edit-name' and @name='name']"}
-  (Session info: chrome=80.0.3987.149)
+  (Session info: chrome=80.0.3987.163)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
-System info: host: 'CORPLPTP000053', ip: '10.81.235.56', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+System info: host: 'CORPLPTP000053', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\010645~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49621}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a3095b8fe1b95a100208d56d0128e7c1
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\010645~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59994}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 5ef34a8b33a78f18efc0e4a6ffa62a52
 *** Element info: {Using=xpath, value=//input[@id='edit-name' and @name='name']}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -67,9 +50,9 @@ at org.openqa.selenium.By$ByXPath.findElement(By.java:394)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:325)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at com.sun.proxy.$Proxy14.sendKeys(Unknown Source)
-at com.aakash.qa.pages.LoginPage.login(LoginPage.java:37)
-at com.aakash.qa.testcases.LoginPageTest.validateLoginPage(LoginPageTest.java:61)
+at com.sun.proxy.$Proxy13.sendKeys(Unknown Source)
+at com.aakash.qa.pages.LoginPage.login(LoginPage.java:48)
+at com.aakash.qa.testcases.LoginPageTest.validateLoginPage(LoginPageTest.java:41)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -104,7 +87,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLoginPage -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.aakash.qa.testcases.LoginPageTest@480bdb19]" name="tearDown" is-config="true" duration-ms="971" started-at="2020-04-03T18:29:43 IST" finished-at="2020-04-03T18:29:44 IST">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.aakash.qa.testcases.LoginPageTest@86be70a]" name="tearDown" is-config="true" duration-ms="941" started-at="2020-04-04T12:42:22 IST" finished-at="2020-04-04T12:42:23 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
