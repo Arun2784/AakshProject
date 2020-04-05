@@ -4,10 +4,13 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import javax.xml.xpath.XPath;
+
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.WebElement;
 
 import com.aakash.qa.base.TestBase;
 
@@ -28,6 +31,12 @@ public class TestUtilAakash extends TestBase {
 	public void defaultframe() {
 
 		driver.switchTo().defaultContent();
+	}
+
+	public void swicthLoginPageFrame() {
+
+		driver.switchTo().frame("//iframe[contains(@id,'container-notification-frame-5e8423aa8436de1ef2631200')]");
+
 	}
 
 	public static Object[][] getAakashTestData(String sheetName1) throws InvalidFormatException {

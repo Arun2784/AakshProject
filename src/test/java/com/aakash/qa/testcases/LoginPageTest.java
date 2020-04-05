@@ -17,6 +17,7 @@ public class LoginPageTest extends TestBase {
 
 	LoginPage loginpage;
 	TestUtilAakash aakashutil;
+	HomePage homePage;
 
 	public LoginPageTest() throws InterruptedException {
 
@@ -30,14 +31,24 @@ public class LoginPageTest extends TestBase {
 		initialaztion();
 
 		loginpage = new LoginPage();
+		homePage = new HomePage();
 		aakashutil = new TestUtilAakash();
 		aakashutil.switchframe();
+		homePage.clickOnCrossIcon();
+		aakashutil.defaultframe();
+		loginpage.clickonIcons();
+		aakashutil.swicthLoginPageFrame();
+		loginpage.loginPageFrameClick();
+		//aakashutil.defaultframe();
+
 	}
 
 	@Test(priority = 1)
 
 	public void validateLoginPage() {
 
+		
+		
 		loginpage.login(prop.getProperty("user_name"), prop.getProperty("password"));
 
 		System.out.println("successfully login");

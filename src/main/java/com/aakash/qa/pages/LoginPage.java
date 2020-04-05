@@ -1,5 +1,6 @@
 package com.aakash.qa.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -21,10 +22,13 @@ public class LoginPage extends TestBase {
 	
 	WebElement clickonLogintext;
 	
+	@FindBy(xpath="//div[@class='icon close' and @id='co-close-icon-5e8423aa8436de1ef2631200']")
+	
+	WebElement crossloginpageFrame;
+	
 	@FindBy(xpath="//input[@id='edit-name' and @name='name']")
 	
 	WebElement loginField;
-	
 	
 	@FindBy(xpath="//input[@id='edit-pass' and @name='pass']")
 	
@@ -44,6 +48,36 @@ public class LoginPage extends TestBase {
 		
 	}
 	
+	public void clickonIcons() throws InterruptedException {
+		
+		Thread.sleep(5000);
+		//clickOnCrossIcon.click();
+		clickonLoginIcon.click();
+		
+		Thread.sleep(3000);
+		clickonLogintext.click();
+		
+	}
+	
+	
+	public void loginPageFrameClick() throws InterruptedException {
+		
+		int size = driver.findElements(By.tagName("iframe")).size();
+
+	    for(int i=0; i<=size; i++){
+		driver.switchTo().frame(i);
+		int total=driver.findElements(By.xpath("//img[@class='notimage clickable-element']")).size();
+		System.out.println(total);
+		Thread.sleep(5000);
+		
+		crossloginpageFrame.click();
+		
+	    driver.switchTo().defaultContent();}
+		
+		
+	}
+	
+	
 	public void login(String username, String password) {
 		try {
 			Thread.sleep(5000);
@@ -52,8 +86,6 @@ public class LoginPage extends TestBase {
 			e.printStackTrace();
 		}
 		
-		clickOnCrossIcon.click();
-		clickonLoginIcon.click();
 		loginField.sendKeys(username);
 		passwordfield.sendKeys(password);
 		
