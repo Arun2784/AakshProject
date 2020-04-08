@@ -35,8 +35,9 @@ public class TestUtilAakash extends TestBase {
 
 	public void swicthLoginPageFrame() {
 
-		driver.switchTo().frame("//iframe[contains(@id,'container-notification-frame-5e8423aa8436de1ef2631200')]");
-
+		//driver.switchTo().frame("//iframe[contains(@id,'container-notification-frame-5e8423aa8436de1ef2631200')]");
+		driver.switchTo().frame(2);
+		System.out.println("Successfuly reach on frame");
 	}
 
 	public static Object[][] getAakashTestData(String sheetName1) throws InvalidFormatException {

@@ -16,7 +16,7 @@ import com.aakash.qa.utill.TestUtilAakash;
 public class LoginPageTest extends TestBase {
 
 	LoginPage loginpage;
-	TestUtilAakash aakashutil;
+	TestUtilAakash util;
 	HomePage homePage;
 
 	public LoginPageTest() throws InterruptedException {
@@ -32,14 +32,14 @@ public class LoginPageTest extends TestBase {
 
 		loginpage = new LoginPage();
 		homePage = new HomePage();
-		aakashutil = new TestUtilAakash();
-		aakashutil.switchframe();
-		homePage.clickOnCrossIcon();
-		aakashutil.defaultframe();
+		util = new TestUtilAakash();
+		// aakashutil.switchframe();
+		// homePage.clickOnCrossIcon();
+		// aakashutil.defaultframe();
 		loginpage.clickonIcons();
-		aakashutil.swicthLoginPageFrame();
+		util.swicthLoginPageFrame();
 		loginpage.loginPageFrameClick();
-		//aakashutil.defaultframe();
+		util.defaultframe();
 
 	}
 
@@ -47,8 +47,6 @@ public class LoginPageTest extends TestBase {
 
 	public void validateLoginPage() {
 
-		
-		
 		loginpage.login(prop.getProperty("user_name"), prop.getProperty("password"));
 
 		System.out.println("successfully login");

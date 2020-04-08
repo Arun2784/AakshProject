@@ -27,7 +27,7 @@ public class CartPageTest extends TestBase {
 	public CartPageTest() {
 
 		super();
-
+		
 	}
 
 	@BeforeMethod

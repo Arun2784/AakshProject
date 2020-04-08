@@ -9,75 +9,67 @@ import com.aakash.qa.base.TestBase;
 
 public class LoginPage extends TestBase {
 
-	
 	@FindBy(xpath = "//div[contains(@class,'icon close')]")
 
 	WebElement clickOnCrossIcon;
-	
-	@FindBy(xpath="//nav[@id='block-useraccountmenu-3']")
-	
+
+	@FindBy(xpath = "//nav[@id='block-useraccountmenu-3']")
+
 	WebElement clickonLoginIcon;
-	
-	@FindBy(xpath="//a[contains(text(),'Log In')]")
-	
+
+	@FindBy(xpath = "//a[contains(text(),'Log In')]")
+
 	WebElement clickonLogintext;
-	
-	@FindBy(xpath="//div[@class='icon close' and @id='co-close-icon-5e8423aa8436de1ef2631200']")
-	
-	WebElement crossloginpageFrame;
-	
-	@FindBy(xpath="//input[@id='edit-name' and @name='name']")
-	
+
+	@FindBy(xpath = "//div[contains(@class,'icon close')]")
+
+	WebElement crossIcon;
+
+	@FindBy(xpath = "//input[@id='edit-name' and @name='name']")
+
 	WebElement loginField;
-	
-	@FindBy(xpath="//input[@id='edit-pass' and @name='pass']")
-	
+
+	@FindBy(xpath = "//input[@id='edit-pass' and @name='pass']")
+
 	WebElement passwordfield;
-	
-	
-	
-	@FindBy(xpath="//input[@id='edit-submit' and @value='Sign In']")
-	
+
+	@FindBy(xpath = "//input[@id='edit-submit' and @value='Sign In']")
+
 	WebElement signIN;
-	
-	
+
 	public LoginPage() {
-		
-		
+
 		PageFactory.initElements(driver, this);
-		
+
 	}
-	
+
 	public void clickonIcons() throws InterruptedException {
-		
-		Thread.sleep(5000);
-		//clickOnCrossIcon.click();
+
+		Thread.sleep(2000);
+		// clickOnCrossIcon.click();
 		clickonLoginIcon.click();
-		
+
 		Thread.sleep(3000);
 		clickonLogintext.click();
-		
-	}
-	
-	
-	public void loginPageFrameClick() throws InterruptedException {
-		
-		int size = driver.findElements(By.tagName("iframe")).size();
 
-	    for(int i=0; i<=size; i++){
-		driver.switchTo().frame(i);
-		int total=driver.findElements(By.xpath("//img[@class='notimage clickable-element']")).size();
-		System.out.println(total);
-		Thread.sleep(5000);
-		
-		crossloginpageFrame.click();
-		
-	    driver.switchTo().defaultContent();}
-		
-		
 	}
-	
-	
+
+	public void loginPageFrameClick() throws InterruptedException {
+
+//		int size = driver.findElements(By.tagName("iframe")).size();
+//
+//	    for(int i=0; i<=size; i++){
+//		driver.switchTo().frame(i);
+//		int total=driver.findElements(By.xpath("//img[@class='notimage clickable-element']")).size();
+//		System.out.println(total);
+		Thread.sleep(5000);
+		crossIcon.click();
+
+		System.out.println("Successfuly click on cross icon");
+
+		// driver.switchTo().defaultContent();
+	}
+
 	public void login(String username, String password) {
 		try {
 			Thread.sleep(5000);
@@ -85,15 +77,14 @@ public class LoginPage extends TestBase {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		loginField.sendKeys(username);
 		passwordfield.sendKeys(password);
-		
+
 		signIN.click();
-		
-		
-		//return new StudentDashBoard();
-		
+
+		// return new StudentDashBoard();
+
 	}
-	
+
 }
