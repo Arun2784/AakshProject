@@ -33,9 +33,6 @@ public class LoginPageTest extends TestBase {
 		loginpage = new LoginPage();
 		homePage = new HomePage();
 		util = new TestUtilAakash();
-		// aakashutil.switchframe();
-		// homePage.clickOnCrossIcon();
-		// aakashutil.defaultframe();
 		loginpage.clickonIcons();
 		util.swicthLoginPageFrame();
 		loginpage.loginPageFrameClick();

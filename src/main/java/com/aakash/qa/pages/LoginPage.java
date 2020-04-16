@@ -25,15 +25,23 @@ public class LoginPage extends TestBase {
 
 	WebElement crossIcon;
 
-	@FindBy(xpath = "//input[@id='edit-name' and @name='name']")
+	@FindBy(xpath = "//input[@id='edit-login-returning-customer-name']")
+
+	WebElement loginField_Purchase;
+	
+	@FindBy(xpath = "//input[@id='edit-name']")
 
 	WebElement loginField;
-
-	@FindBy(xpath = "//input[@id='edit-pass' and @name='pass']")
+	
+	@FindBy(xpath = "//input[@id='edit-pass']")
 
 	WebElement passwordfield;
 
-	@FindBy(xpath = "//input[@id='edit-submit' and @value='Sign In']")
+	@FindBy(xpath = "//input[@id='edit-login-returning-customer-password']")
+
+	WebElement passwordfield_Purchase;
+
+	@FindBy(xpath = "//input[@name='op' and @value='Sign In']")
 
 	WebElement signIN;
 
@@ -62,6 +70,7 @@ public class LoginPage extends TestBase {
 //		driver.switchTo().frame(i);
 //		int total=driver.findElements(By.xpath("//img[@class='notimage clickable-element']")).size();
 //		System.out.println(total);
+		
 		Thread.sleep(5000);
 		crossIcon.click();
 
@@ -87,4 +96,23 @@ public class LoginPage extends TestBase {
 
 	}
 
+	
+	
+	public StudentDashBoard login_purchase(String username, String password) {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		loginField_Purchase.sendKeys(username);
+		passwordfield_Purchase.sendKeys(password);
+
+		signIN.click();
+
+		 return new StudentDashBoard();
+
+	}
+	
 }

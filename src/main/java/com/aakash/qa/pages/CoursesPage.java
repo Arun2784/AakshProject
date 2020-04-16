@@ -92,12 +92,12 @@ public class CoursesPage extends TestBase {
 		state1.selectByVisibleText(selectState);
 
 		Thread.sleep(5000);
-
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-
 		// This will scroll the page till the element is found
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;		
 		js.executeScript("arguments[0].scrollIntoView();", clickOnApply);
 		Thread.sleep(5000);
+		
 		Select centers1 = new Select(AakashCenter);
 
 		centers1.selectByVisibleText(selectCenters);
@@ -167,7 +167,7 @@ public class CoursesPage extends TestBase {
 		wait.until(ExpectedConditions.visibilityOf(selectSeacrhedCourses));
 		wait.until(ExpectedConditions.elementToBeClickable(selectSeacrhedCourses));
 		selectSeacrhedCourses.click();
-		System.out.println("clicking on Searched courses");
+		System.out.println("successfully clicked on Searched courses");
 
 		return new SearchedCoursePage();
 

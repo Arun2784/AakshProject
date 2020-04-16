@@ -10,6 +10,7 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.aakash.qa.base.TestBase;
@@ -18,7 +19,6 @@ public class TestUtilAakash extends TestBase {
 
 	public static long PAGE_LOAD_TIMEOUT = 30;
 	public static long Implicit_wait = 10;
-
 	public static String TESTDATA_SHEET_PATH = "D:\\Core Java\\AakashWebsiteProject\\src\\main\\java\\com\\aakash\\qa\\testdata\\AakashProjectData.xlsx";
 	static Workbook book;
 	static Sheet sheet;;
@@ -33,10 +33,13 @@ public class TestUtilAakash extends TestBase {
 		driver.switchTo().defaultContent();
 	}
 
-	public void swicthLoginPageFrame() {
+	public void swicthLoginPageFrame() throws InterruptedException {
 
-		//driver.switchTo().frame("//iframe[contains(@id,'container-notification-frame-5e8423aa8436de1ef2631200')]");
-		driver.switchTo().frame(2);
+		// driver.switchTo().frame("//iframe[contains(@id,'container-notification-frame-5e8423aa8436de1ef2631200')]");
+		Thread.sleep(5000);
+
+		WebElement fram = driver.findElement(By.id("container-notification-frame-5e8423aa8436de1ef2631200"));
+		driver.switchTo().frame(fram);
 		System.out.println("Successfuly reach on frame");
 	}
 
