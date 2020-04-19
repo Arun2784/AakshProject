@@ -21,6 +21,8 @@ public class CartPage extends TestBase {
 	public LoginPage clickOnProceedToCheckOut() throws InterruptedException {
 
 		Thread.sleep(5000);
+		
+		
 		proceedToCheckOut.click();
 
 		System.out.println("Successfully click on Proceed to checkout Page");

@@ -71,7 +71,7 @@ public class LoginPage extends TestBase {
 //		int total=driver.findElements(By.xpath("//img[@class='notimage clickable-element']")).size();
 //		System.out.println(total);
 		
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		crossIcon.click();
 
 		System.out.println("Successfuly click on cross icon");
@@ -81,7 +81,7 @@ public class LoginPage extends TestBase {
 
 	public void login(String username, String password) {
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
