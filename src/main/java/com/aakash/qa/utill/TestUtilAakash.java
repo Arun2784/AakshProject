@@ -42,6 +42,22 @@ public class TestUtilAakash extends TestBase {
 		driver.switchTo().frame(fram);
 		System.out.println("Successfuly reach on frame");
 	}
+	
+	
+	public void chatwindowFrame() throws InterruptedException {
+
+		
+		Thread.sleep(3000);
+		System.out.println("Starting for chat frame");
+//		WebElement chatfram = driver.findElement(By.id("//div[@class='jx_ui_Widget chat_log_wrapper']"));
+//		System.out.println("Successfully reach on chat windwo frame1");
+//		driver.switchTo().frame(chatfram);
+		
+		driver.switchTo().frame(1);
+		System.out.println("Successfully reach on chat windwo frame2");
+	}
+	
+	
 
 	public static Object[][] getAakashTestData(String sheetName1) throws InvalidFormatException {
 		FileInputStream file = null;

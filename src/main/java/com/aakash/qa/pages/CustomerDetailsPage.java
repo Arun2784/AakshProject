@@ -13,10 +13,13 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Sleeper;
 
 import com.aakash.qa.base.TestBase;
+import com.aakash.qa.utill.TestUtilAakash;
 
 import net.bytebuddy.asm.Advice.Argument;
 
 public class CustomerDetailsPage extends TestBase {
+
+	TestUtilAakash utils;
 
 	@FindBy(xpath = "//label[contains(text(),'Paytm')]")
 
@@ -62,7 +65,7 @@ public class CustomerDetailsPage extends TestBase {
 
 	WebElement parentemail;
 
-	@FindBy(xpath = "//select[@id='edit-payment-information-billing-information-address-0-address-administrative-area']")
+	@FindBy(xpath = "//input[@id='edit-payment-information-billing-information-address-0-address-postal-code']")
 
 	WebElement pincode;
 
@@ -81,6 +84,10 @@ public class CustomerDetailsPage extends TestBase {
 	@FindBy(xpath = "//input[@id='edit-actions-next']")
 
 	WebElement continueBtn;
+
+	@FindBy(xpath = "//input[@id='edit-actions-next']")
+
+	WebElement payNow;
 
 	public CustomerDetailsPage() {
 
@@ -183,9 +190,28 @@ public class CustomerDetailsPage extends TestBase {
 		streetAddress.sendKeys(street_address);
 		this.city.sendKeys(city);
 		this.pincode.sendKeys(pincode);
+		Thread.sleep(2000);
+
 		Select selectstate = new Select(Ship_state);
 		selectstate.selectByVisibleText(state);
+		Thread.sleep(1000);
+
+		System.out.println("Successfully Form Fill");
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("arguments[0].scrollIntoView();", continueBtn);
+
+		utils = new TestUtilAakash();
+		utils.chatwindowFrame();
+
+		System.out.println("Successfully Frame switch");
+		driver.findElement(By.xpath("//div[@class='overlay jx_ui_Widget']")).click();
+		driver.switchTo().defaultContent();
+		((JavascriptExecutor) driver).executeScript("scroll(0,-500)");
+		((JavascriptExecutor) driver).executeScript("scroll(0,100)");
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("arguments[0].scrollIntoView();", continueBtn);
 		continueBtn.click();
+		payNow.click();
 
 	}
 

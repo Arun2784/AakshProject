@@ -80,6 +80,8 @@ public class CustomerDetailsPageTest extends TestBase {
 
 		// customerdtl.selectDOB(driver, dateofBirth, dateVal);
 	}
+	
+	//div[@class='scrollable_inner jx_ui_Widget']
 
 //	@AfterMethod
 //

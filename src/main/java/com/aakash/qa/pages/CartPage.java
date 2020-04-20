@@ -20,7 +20,7 @@ public class CartPage extends TestBase {
 
 	public LoginPage clickOnProceedToCheckOut() throws InterruptedException {
 
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		
 		
 		proceedToCheckOut.click();
