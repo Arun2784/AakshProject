@@ -9,11 +9,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Sleeper;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aakash.qa.base.TestBase;
 import com.aakash.qa.utill.TestUtilAakash;
+import com.google.auto.common.Visibility;
 
 import net.bytebuddy.asm.Advice.Argument;
 
@@ -112,10 +115,19 @@ public class CustomerDetailsPage extends TestBase {
 
 		((JavascriptExecutor) driver).executeScript("scroll(0,100)");
 		gender.click();
+		firstName.clear();
 		firstName.sendKeys(stu_name);
+		Thread.sleep(4000);
+		lasttName.clear();
 		lasttName.sendKeys(stu_last);
+		Thread.sleep(4000);
+
+		dateofBirth.clear();
 		dateofBirth.click();
 		Thread.sleep(2000);
+
+		dateofBirth.clear();
+	
 		selectMonth.click();
 		System.out.println("Successfully click on Month drop down");
 
@@ -129,7 +141,9 @@ public class CustomerDetailsPage extends TestBase {
 
 		selectYear.click();
 		Select select_year = new Select(selectYear);
+		Thread.sleep(5000);
 		select_year.selectByVisibleText(prop.getProperty("dob_year"));
+		System.out.println("Successfully year Value selected");
 		// System.out.println(selectYear.getText());
 
 		/*
@@ -159,57 +173,63 @@ public class CustomerDetailsPage extends TestBase {
 		/*
 		 * /* Author- Arun Kumar Pandey Code sourse -SDET Youtube date-19 April status-
 		 * code Properly working
+		 * 
 		 */
-
 		Thread.sleep(5000);
-
 		List<WebElement> list = driver.findElements(By.xpath("/html[1]/body[1]/div[7]/table[1]/tbody[1]/tr/td"));
 
-		// int total_date = alldates.size();
-
-		// System.out.println("Total dates visible= " + total_date);
-
+//		WebDriverWait wait1 = new WebDriverWait(driver, 4000);
+//		wait1.until(ExpectedConditions.visibilityOf((WebElement) list));
+		
 		for (WebElement e : list) {
+
 			String date = e.getText();
+
 			// Convert String to Integer
 			// int dateInt = Integer.parseInt(date);
 			if (date.equalsIgnoreCase(prop.getProperty("dob_date"))) {
+
 				e.click();
 				System.out.println("Successfully date selected");
 				break;
 			}
 		}
 
-		/*
-		 * Parent Information
-		 */
-
 		parentName.sendKeys(Parent_name);
+		System.out.println("Successfully PName Fill");
 		parentMobile.sendKeys(Parent_Mobile);
+		parentemail.clear();
 		parentemail.sendKeys(Parent_email);
+		System.out.println("Successfully pmail Fill");
 		streetAddress.sendKeys(street_address);
 		this.city.sendKeys(city);
 		this.pincode.sendKeys(pincode);
+		System.out.println("Successfully pincode Fill");
 		Thread.sleep(2000);
 
+		WebDriverWait wait = new WebDriverWait(driver, 4000);
+		wait.until(ExpectedConditions.visibilityOf(Ship_state));
+		wait.until(ExpectedConditions.elementToBeClickable(Ship_state));
 		Select selectstate = new Select(Ship_state);
+		System.out.println("Successfully state reach new stage");
 		selectstate.selectByVisibleText(state);
-		Thread.sleep(1000);
 
 		System.out.println("Successfully Form Fill");
 //		JavascriptExecutor js = (JavascriptExecutor) driver;
 //		js.executeScript("arguments[0].scrollIntoView();", continueBtn);
+		/*
+		 * utils = new TestUtilAakash(); utils.chatwindowFrame();
+		 * 
+		 * System.out.println("Successfully Frame switch");
+		 * driver.findElement(By.xpath("//div[@class='overlay jx_ui_Widget']")).click();
+		 * driver.switchTo().defaultContent();
+		 */
 
-		utils = new TestUtilAakash();
-		utils.chatwindowFrame();
-
-		System.out.println("Successfully Frame switch");
-		driver.findElement(By.xpath("//div[@class='overlay jx_ui_Widget']")).click();
-		driver.switchTo().defaultContent();
 		((JavascriptExecutor) driver).executeScript("scroll(0,-500)");
 		((JavascriptExecutor) driver).executeScript("scroll(0,100)");
 //		JavascriptExecutor js = (JavascriptExecutor) driver;
 //		js.executeScript("arguments[0].scrollIntoView();", continueBtn);
+
 		continueBtn.click();
 		payNow.click();
 

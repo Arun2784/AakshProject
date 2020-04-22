@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Apr 19 17:24:17 IST 2020</td>
+<td>Started on:</td><td>Wed Apr 22 01:07:49 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>104 seconds (104933 ms)</td>
+<tr><td>Total time:</td><td>92 seconds (92878 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,13 +76,13 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.aakash.qa.testcases.CustomerDetailsPageTest.validateCheckOut()'><b>validateCheckOut</b><br>Test class: com.aakash.qa.testcases.CustomerDetailsPageTest<br>Parameters: 11, Goa, Goa - Margao, Arun, Pandey, Ak Pandey, 9560370108, arunpandey.pus@aesl.in, JKHouse- Plot 32 Pusa road, Noida, 201305, Uttar Pradesh</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input class=&quot;ga-paycontinue button button--primary js-form-submit form-submit&quot; data-drupal-selector=&quot;edit-actions-next&quot; type=&quot;submit&quot; id=&quot;edit-actions-next&quot; name=&quot;op&quot; value=&quot;Continue&quot;&gt; is not clickable at point (1098, 19). Other element would receive the click: &lt;a href=&quot;tel:...&quot;&gt;1800-102-2727&lt;/a&gt;
+<td><div><pre>org.openqa.selenium.InvalidElementStateException: invalid element state
   (Session info: chrome=80.0.3987.163)
 Build info: version: &apos;4.0.0-alpha-4&apos;, revision: &apos;c2d955b49e&apos;
-System info: host: &apos;CORPLPTP000053&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+System info: host: &apos;CORPLPTP000053&apos;, ip: &apos;10.81.235.152&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\010645~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62316}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 8594c65ec5eb2f463b6e0dc9589993d6
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\010645~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61360}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 99d93eb5f2c8b8b6959bad70fa14d5f4
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -94,14 +94,14 @@ Session ID: 8594c65ec5eb2f463b6e0dc9589993d6
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:582)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:316)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:134)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at com.sun.proxy.$Proxy13.click(Unknown Source)
-	at com.aakash.qa.pages.CustomerDetailsPage.fill_shipping_information(CustomerDetailsPage.java:214)
+	at com.sun.proxy.$Proxy13.clear(Unknown Source)
+	at com.aakash.qa.pages.CustomerDetailsPage.fill_shipping_information(CustomerDetailsPage.java:130)
 	at com.aakash.qa.testcases.CustomerDetailsPageTest.validateCheckOut(CustomerDetailsPageTest.java:78)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -131,14 +131,14 @@ Session ID: 8594c65ec5eb2f463b6e0dc9589993d6
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace278753868", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace278753868'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input class=&quot;ga-paycontinue button button--primary js-form-submit form-submit&quot; data-drupal-selector=&quot;edit-actions-next&quot; type=&quot;submit&quot; id=&quot;edit-actions-next&quot; name=&quot;op&quot; value=&quot;Continue&quot;&gt; is not clickable at point (1098, 19). Other element would receive the click: &lt;a href=&quot;tel:...&quot;&gt;1800-102-2727&lt;/a&gt;
+</pre></div><a href='#' onClick='toggleBox("stack-trace1590404373", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1590404373'><pre>org.openqa.selenium.InvalidElementStateException: invalid element state
   (Session info: chrome=80.0.3987.163)
 Build info: version: &apos;4.0.0-alpha-4&apos;, revision: &apos;c2d955b49e&apos;
-System info: host: &apos;CORPLPTP000053&apos;, ip: &apos;192.168.1.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+System info: host: &apos;CORPLPTP000053&apos;, ip: &apos;10.81.235.152&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\010645~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62316}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 8594c65ec5eb2f463b6e0dc9589993d6
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\010645~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61360}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 99d93eb5f2c8b8b6959bad70fa14d5f4
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -150,14 +150,14 @@ Session ID: 8594c65ec5eb2f463b6e0dc9589993d6
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:582)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:316)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:134)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at com.sun.proxy.$Proxy13.click(Unknown Source)
-	at com.aakash.qa.pages.CustomerDetailsPage.fill_shipping_information(CustomerDetailsPage.java:214)
+	at com.sun.proxy.$Proxy13.clear(Unknown Source)
+	at com.aakash.qa.pages.CustomerDetailsPage.fill_shipping_information(CustomerDetailsPage.java:130)
 	at com.aakash.qa.testcases.CustomerDetailsPageTest.validateCheckOut(CustomerDetailsPageTest.java:78)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -188,7 +188,7 @@ Session ID: 8594c65ec5eb2f463b6e0dc9589993d6
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>77</td>
+<td>64</td>
 <td>com.aakash.qa.testcases.CustomerDetailsPageTest@86be70a</td></tr>
 </table><p>
 </body>
