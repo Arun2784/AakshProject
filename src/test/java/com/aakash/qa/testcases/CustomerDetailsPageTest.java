@@ -1,10 +1,21 @@
 package com.aakash.qa.testcases;
 
-import org.openqa.selenium.By;
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.ITestContext;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.aakash.qa.base.TestBase;
@@ -15,7 +26,13 @@ import com.aakash.qa.pages.HomePage;
 import com.aakash.qa.pages.LoginPage;
 import com.aakash.qa.pages.SearchedCoursePage;
 import com.aakash.qa.utill.DataProviderClass;
+import com.aakash.qa.utill.ExtentReportListner;
 import com.aakash.qa.utill.TestUtilAakash;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class CustomerDetailsPageTest extends TestBase {
 
@@ -28,14 +45,53 @@ public class CustomerDetailsPageTest extends TestBase {
 	SearchedCoursePage searchedPage;
 	CartPage cartpage;
 	CustomerDetailsPage customerdtl;
-//	String dateVal = "18-Nov-2000";
-//	 WebElement dateofBirth;
+	public ExtentHtmlReporter htmlreporter;
+	public ExtentReports extent;
+	public static ExtentTest logger;
+	ExtentReportListner extentReport;
 
 	public CustomerDetailsPageTest() {
 
 		super();
 
 	}
+	  
+	
+	@BeforeTest
+	public void setExtent() {
+
+		htmlreporter = new ExtentHtmlReporter(
+				System.getProperty("user.dir") + "/test-output/ArunTesting.html");// +
+
+		extent = new ExtentReports();
+		extent.attachReporter(htmlreporter);
+		extent.setSystemInfo("Hostname", "Arun-Windows10");
+		extent.setSystemInfo("username", "Arun Kumar Pandey");
+		extent.setSystemInfo("Environment", "QA-Aakash education Website");
+
+		// avent.getConfigurationStore().s
+	}
+	  
+		public static String getScreenShot(WebDriver driver, String screenshotName) throws IOException {
+			// String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+
+			TakesScreenshot ts = (TakesScreenshot) driver;
+
+			File src = ts.getScreenshotAs(OutputType.FILE);
+
+			String destination = System.getProperty("user.dir") + "/FailedScreenshot/" + System.currentTimeMillis()
+					+ ".png";
+
+			File finaldestination = new File(destination);
+
+			FileUtils.copyFile(src, finaldestination);
+
+			return destination;
+
+		}
+
+
+	
 
 	@BeforeMethod
 
@@ -44,9 +100,9 @@ public class CustomerDetailsPageTest extends TestBase {
 		initialaztion();
 		homePage = new HomePage();
 		aakashutil = new TestUtilAakash();
-		// aakashutil.switchframe();
-		// homePage.clickOnCrossIcon();
-		// aakashutil.defaultframe();
+		aakashutil.switchframe();
+		homePage.clickOnCrossIcon();
+		aakashutil.defaultframe();
 		homePage.clickOnCourseLink();
 		coursesPage = new CoursesPage();
 		coursesPage.clickonEngineering();
@@ -54,6 +110,7 @@ public class CustomerDetailsPageTest extends TestBase {
 		cartpage = new CartPage();
 		loginpage = new LoginPage();
 		customerdtl = new CustomerDetailsPage();
+		// extentReport = new ExtentReportListner();
 
 	}
 
@@ -62,6 +119,8 @@ public class CustomerDetailsPageTest extends TestBase {
 	public void validateCheckOut(String chooseClass, String chooseState, String chooseCenters, String stu_name,
 			String stu_last, String Parent_name, String Parent_Mobile, String Parent_email, String street_address,
 			String city, String pincode, String state) throws InterruptedException {
+		
+		logger=extent.createTest("Aakash Website Course Purchase Journey");
 		coursesPage.selectEngineeringcourses(chooseClass, chooseState, chooseCenters);
 		coursesPage.clickOnSearchedCourses();
 		searchedPage.clickOnPayRegistration();
@@ -73,22 +132,44 @@ public class CustomerDetailsPageTest extends TestBase {
 //		js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//input[@type='submit' and @id='edit-checkout']")));
 //		
 		cartpage.clickOnProceedToCheckOut();
-		//customerdtl.fill_shipping_information(stu_name, stu_last);
+		Assert.assertEquals(driver.getTitle(), "Google12");
 
-		customerdtl.fill_shipping_information(stu_name, stu_last, Parent_name, Parent_Mobile, Parent_email,
-				street_address, city, pincode, state);
+		//customerdtl.fill_shipping_information(stu_name, stu_last, Parent_name, Parent_Mobile, Parent_email,
+				//street_address, city, pincode, state);
 
-		// customerdtl.selectDOB(driver, dateofBirth, dateVal);
 	}
-	
-	//div[@class='scrollable_inner jx_ui_Widget']
 
-//	@AfterMethod
-//
-//	public void tearDown() {
-//
-//		driver.quit();
-//
-//	}
+	@AfterMethod
+
+	public void tearDown(ITestResult result) throws IOException {
+
+		if (result.getStatus() == ITestResult.FAILURE) {
+
+			logger.log(Status.FAIL, "TestCase Failed" + result.getName());// To Add name in extent report
+			logger.log(Status.FAIL, "TestCase Failed" + result.getThrowable());// To Add error/exception in
+																				// extent report
+			String screnshotPath = ExtentReportListner.getScreenShot(driver, result.getName());
+
+			logger.log(Status.FAIL, result.getThrowable().getMessage(),
+					MediaEntityBuilder.createScreenCaptureFromPath(screnshotPath).build());
+
+		}
+
+		else if (result.getStatus() == ITestResult.SKIP) {
+			logger.log(Status.SKIP, "Testcase Skipped" + result.getName());
+		} else if (result.getStatus() == ITestResult.SUCCESS) {
+			logger.log(Status.PASS, "Testcase Skipped" + result.getName());
+
+		}
+		driver.quit();
+	}
+
+	@AfterTest
+
+	public void endreport() {
+
+		extent.flush();
+
+	}
 
 }

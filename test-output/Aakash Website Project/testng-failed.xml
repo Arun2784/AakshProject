@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Aakash Website Project]">
+  <listeners>
+    <listener class-name="com.aakash.qa.utill.ExtentReportListner"/>
+  </listeners>
   <test thread-count="5" name="Aakash Website Project(failed)">
     <classes>
-      <class name="com.aakash.qa.testcases.CoursePageTest">
+      <class name="com.aakash.qa.testcases.CustomerDetailsPageTest">
         <methods>
-          <include name="engineering"/>
           <include name="setup"/>
-          <include name="tearDown"/>
+          <include name="validateCheckOut" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.aakash.qa.testcases.CoursePageTest -->
+      </class> <!-- com.aakash.qa.testcases.CustomerDetailsPageTest -->
     </classes>
   </test> <!-- Aakash Website Project(failed) -->
 </suite> <!-- Failed suite [Aakash Website Project] -->

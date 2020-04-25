@@ -175,6 +175,7 @@ public class CustomerDetailsPage extends TestBase {
 		 * code Properly working
 		 * 
 		 */
+	
 		Thread.sleep(5000);
 		List<WebElement> list = driver.findElements(By.xpath("/html[1]/body[1]/div[7]/table[1]/tbody[1]/tr/td"));
 

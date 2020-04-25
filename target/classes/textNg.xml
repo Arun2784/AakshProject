@@ -4,13 +4,18 @@
 
 <suite name="Aakash Website Project">
 
+	<listeners>
+		<listener
+			class-name="com.aakash.qa.utill.ExtentReportListner"></listener>
 
+
+
+	</listeners>
 	<test name="Aakash Website Project">
-
 
 		<classes>
 
-			<class name="com.aakash.qa.testcases.CoursePageTest" />
+			<class name="com.aakash.qa.testcases.CustomerDetailsPageTest" />
 
 
 

@@ -5,8 +5,11 @@
     <classes>
       <class name="com.aakash.qa.testcases.CustomerDetailsPageTest">
         <methods>
+          <include name="setExtent"/>
           <include name="setup"/>
           <include name="validateCheckOut" invocation-numbers="0"/>
+          <include name="endreport"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.aakash.qa.testcases.CustomerDetailsPageTest -->
     </classes>
