@@ -1,0 +1,6 @@
+com\aakash\qa\testcases\AakashHomePageTest.class
+com\aakash\qa\testcases\CustomerDetailsPageTest.class
+com\aakash\qa\testcases\CartPageTest.class
+com\aakash\qa\testcases\CoursePageTest.class
+com\aakash\qa\testcases\AakashPageFrameIssue.class
+com\aakash\qa\testcases\SearchedCoursePageTest.class

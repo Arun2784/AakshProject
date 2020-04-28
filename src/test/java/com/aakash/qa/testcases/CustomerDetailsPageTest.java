@@ -48,7 +48,7 @@ public class CustomerDetailsPageTest extends TestBase {
 	public ExtentHtmlReporter htmlreporter;
 	public ExtentReports extent;
 	public static ExtentTest logger;
-	ExtentReportListner extentReport;
+	//ExtentReportListner extentReport;
 
 	public CustomerDetailsPageTest() {
 
@@ -132,7 +132,7 @@ public class CustomerDetailsPageTest extends TestBase {
 //		js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//input[@type='submit' and @id='edit-checkout']")));
 //		
 		cartpage.clickOnProceedToCheckOut();
-		Assert.assertEquals(driver.getTitle(), "Google12");
+		Assert.assertEquals(driver.getTitle(), "Checkout | AESL");
 
 		//customerdtl.fill_shipping_information(stu_name, stu_last, Parent_name, Parent_Mobile, Parent_email,
 				//street_address, city, pincode, state);
@@ -152,15 +152,19 @@ public class CustomerDetailsPageTest extends TestBase {
 
 			logger.log(Status.FAIL, result.getThrowable().getMessage(),
 					MediaEntityBuilder.createScreenCaptureFromPath(screnshotPath).build());
+			
+			
 
 		}
 
 		else if (result.getStatus() == ITestResult.SKIP) {
 			logger.log(Status.SKIP, "Testcase Skipped" + result.getName());
+			
 		} else if (result.getStatus() == ITestResult.SUCCESS) {
-			logger.log(Status.PASS, "Testcase Skipped" + result.getName());
+			logger.log(Status.PASS, "Testcase Passed" + result.getName());
 
 		}
+		
 		driver.quit();
 	}
 

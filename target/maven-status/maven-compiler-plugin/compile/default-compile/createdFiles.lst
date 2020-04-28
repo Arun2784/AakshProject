@@ -1,0 +1,14 @@
+com\aakash\qa\utill\ScreenshotPractice.class
+com\aakash\qa\utill\DataProviderClass.class
+com\aakash\qa\pages\StudentDashBoard.class
+com\aakash\qa\pages\CustomerDetailsPage.class
+com\aakash\qa\pages\ResultPage.class
+com\aakash\qa\pages\SearchedCoursePage.class
+com\aakash\qa\pages\CoursesPage.class
+com\aakash\qa\pages\LoginPage.class
+com\aakash\qa\pages\RegistrationPage.class
+com\aakash\qa\utill\TestUtilAakash.class
+com\aakash\qa\pages\CartPage.class
+com\aakash\qa\pages\HomePage.class
+com\aakash\qa\utill\ExtentReportListner.class
+com\aakash\qa\base\TestBase.class

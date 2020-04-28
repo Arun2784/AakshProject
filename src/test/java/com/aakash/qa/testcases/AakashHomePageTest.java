@@ -49,8 +49,9 @@ public class AakashHomePageTest extends TestBase {
 	/*
 	 * @Test(priority = 2)
 	 * 
-	 * public void verifyAakashLogoTest() { boolean flag1 =
-	 * homePage.verifyAakashLogo(); Assert.assertTrue(flag1);
+	 * public void verifyAakashLogoTest() { 
+	 * boolean flag1 =homePage.verifyAakashLogo(); 
+	 * Assert.assertTrue(flag1);
 	 * System.out.println("Ye code bhi mast hai");
 	 * 
 	 * 

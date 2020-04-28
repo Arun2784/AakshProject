@@ -1,101 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="67734" started-at="2020-04-25T17:12:12 IST" finished-at="2020-04-25T17:13:19 IST">
+  <suite name="Default suite" duration-ms="22750" started-at="2020-04-28T14:19:57 IST" finished-at="2020-04-28T14:20:20 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="67734" started-at="2020-04-25T17:12:12 IST" finished-at="2020-04-25T17:13:19 IST">
-      <class name="com.aakash.qa.testcases.CustomerDetailsPageTest">
-        <test-method status="PASS" signature="setExtent()[pri:0, instance:com.aakash.qa.testcases.CustomerDetailsPageTest@436e852b]" name="setExtent" is-config="true" duration-ms="302" started-at="2020-04-25T17:12:12 IST" finished-at="2020-04-25T17:12:12 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setExtent -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.aakash.qa.testcases.CustomerDetailsPageTest@436e852b]" name="setup" is-config="true" duration-ms="20037" started-at="2020-04-25T17:12:13 IST" finished-at="2020-04-25T17:12:33 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="validateCheckOut(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.aakash.qa.testcases.CustomerDetailsPageTest@436e852b]" name="validateCheckOut" duration-ms="43648" started-at="2020-04-25T17:12:33 IST" data-provider="getEngineeringData" finished-at="2020-04-25T17:13:17 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[11]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Goa]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Goa - Margao]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Arun]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Pandey]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Ak Pandey]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[9560370108]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[arunpandey.pus@aesl.in]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[JKHouse- Plot 32 Pusa road]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[Noida]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[201305]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[Uttar Pradesh]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
+    <test name="Default test" duration-ms="22750" started-at="2020-04-28T14:19:57 IST" finished-at="2020-04-28T14:20:20 IST">
+      <class name="com.aakash.qa.testcases.CartPageTest">
+        <test-method status="FAIL" signature="setup()[pri:0, instance:com.aakash.qa.testcases.CartPageTest@1a1d6a08]" name="setup" is-config="true" duration-ms="21737" started-at="2020-04-28T14:19:58 IST" finished-at="2020-04-28T14:20:20 IST">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[expected [Google12] but found [Checkout | AESL]]]>
+              <![CDATA[element click intercepted: Element <a href="/classroom-courses" data-drupal-link-system-path="classroom-courses">...</a> is not clickable at point (377, 75). Other element would receive the click: <div id="connecto-modal-overlay-5e84577f8436de1ef2631295" style="visibility: visible; z-index: 199999990; display: block;">...</div>
+  (Session info: chrome=81.0.4044.122)
+Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
+System info: host: 'CORPLPTP000053', ip: '10.81.234.78', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.122, chrome: {chromedriverVersion: 81.0.4044.69 (6813546031a4b..., userDataDir: C:\Users\010645~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59509}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f0b16a85cf1445d11c521802d851d495]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Google12] but found [Checkout | AESL]
-at org.testng.Assert.fail(Assert.java:97)
-at org.testng.Assert.assertEqualsImpl(Assert.java:136)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:575)
-at org.testng.Assert.assertEquals(Assert.java:585)
-at com.aakash.qa.testcases.CustomerDetailsPageTest.validateCheckOut(CustomerDetailsPageTest.java:135)
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="/classroom-courses" data-drupal-link-system-path="classroom-courses">...</a> is not clickable at point (377, 75). Other element would receive the click: <div id="connecto-modal-overlay-5e84577f8436de1ef2631295" style="visibility: visible; z-index: 199999990; display: block;">...</div>
+  (Session info: chrome=81.0.4044.122)
+Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
+System info: host: 'CORPLPTP000053', ip: '10.81.234.78', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.122, chrome: {chromedriverVersion: 81.0.4044.69 (6813546031a4b..., userDataDir: C:\Users\010645~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59509}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f0b16a85cf1445d11c521802d851d495
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:196)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:129)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:582)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:316)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+at com.sun.proxy.$Proxy13.click(Unknown Source)
+at com.aakash.qa.pages.HomePage.clickOnCourseLink(HomePage.java:63)
+at com.aakash.qa.testcases.CartPageTest.setup(CartPageTest.java:42)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 at java.lang.reflect.Method.invoke(Unknown Source)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:63)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:348)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:302)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:695)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:523)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
 at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
 at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
@@ -120,26 +80,88 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="SKIP" signature="validateCheckOut(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.aakash.qa.testcases.CartPageTest@1a1d6a08]" name="validateCheckOut" duration-ms="0" started-at="2020-04-28T14:20:20 IST" data-provider="getEngineeringData" finished-at="2020-04-28T14:20:20 IST">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <a href="/classroom-courses" data-drupal-link-system-path="classroom-courses">...</a> is not clickable at point (377, 75). Other element would receive the click: <div id="connecto-modal-overlay-5e84577f8436de1ef2631295" style="visibility: visible; z-index: 199999990; display: block;">...</div>
+  (Session info: chrome=81.0.4044.122)
+Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
+System info: host: 'CORPLPTP000053', ip: '10.81.234.78', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.122, chrome: {chromedriverVersion: 81.0.4044.69 (6813546031a4b..., userDataDir: C:\Users\010645~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59509}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f0b16a85cf1445d11c521802d851d495]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="/classroom-courses" data-drupal-link-system-path="classroom-courses">...</a> is not clickable at point (377, 75). Other element would receive the click: <div id="connecto-modal-overlay-5e84577f8436de1ef2631295" style="visibility: visible; z-index: 199999990; display: block;">...</div>
+  (Session info: chrome=81.0.4044.122)
+Build info: version: '4.0.0-alpha-4', revision: 'c2d955b49e'
+System info: host: 'CORPLPTP000053', ip: '10.81.234.78', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.122, chrome: {chromedriverVersion: 81.0.4044.69 (6813546031a4b..., userDataDir: C:\Users\010645~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59509}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f0b16a85cf1445d11c521802d851d495
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:196)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:129)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:582)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:316)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+at com.sun.proxy.$Proxy13.click(Unknown Source)
+at com.aakash.qa.pages.HomePage.clickOnCourseLink(HomePage.java:63)
+at com.aakash.qa.testcases.CartPageTest.setup(CartPageTest.java:42)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:63)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:348)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:302)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:695)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:523)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateCheckOut -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.aakash.qa.testcases.CustomerDetailsPageTest@436e852b]" name="tearDown" is-config="true" duration-ms="2020" started-at="2020-04-25T17:13:17 IST" finished-at="2020-04-25T17:13:19 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=validateCheckOut status=FAILURE method=CustomerDetailsPageTest.validateCheckOut(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.aakash.qa.testcases.CustomerDetailsPageTest@436e852b] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endreport()[pri:0, instance:com.aakash.qa.testcases.CustomerDetailsPageTest@436e852b]" name="endreport" is-config="true" duration-ms="650" started-at="2020-04-25T17:13:19 IST" finished-at="2020-04-25T17:13:19 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- endreport -->
-      </class> <!-- com.aakash.qa.testcases.CustomerDetailsPageTest -->
+      </class> <!-- com.aakash.qa.testcases.CartPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

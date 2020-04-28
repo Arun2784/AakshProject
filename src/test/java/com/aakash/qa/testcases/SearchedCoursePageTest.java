@@ -45,7 +45,9 @@ public class SearchedCoursePageTest extends TestBase {
 
 	@Test(priority = 1, dataProvider = "getEngineeringData", dataProviderClass = DataProviderClass.class)
 
-	public void validateOnPayRegistration(String chooseClass, String chooseState, String chooseCenters)
+	public void validateOnPayRegistration(String chooseClass, String chooseState, String chooseCenters, String stu_name,
+			String stu_last, String Parent_name, String Parent_Mobile, String Parent_email, String street_address,
+			String city, String pincode, String state)
 			throws InterruptedException {
 		coursesPage.selectEngineeringcourses(chooseClass, chooseState, chooseCenters);
 		coursesPage.clickOnSearchedCourses();

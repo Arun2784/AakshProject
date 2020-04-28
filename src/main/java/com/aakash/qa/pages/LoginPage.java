@@ -1,6 +1,7 @@
 package com.aakash.qa.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -28,11 +29,11 @@ public class LoginPage extends TestBase {
 	@FindBy(xpath = "//input[@id='edit-login-returning-customer-name']")
 
 	WebElement loginField_Purchase;
-	
+
 	@FindBy(xpath = "//input[@id='edit-name']")
 
 	WebElement loginField;
-	
+
 	@FindBy(xpath = "//input[@id='edit-pass']")
 
 	WebElement passwordfield;
@@ -70,35 +71,43 @@ public class LoginPage extends TestBase {
 //		driver.switchTo().frame(i);
 //		int total=driver.findElements(By.xpath("//img[@class='notimage clickable-element']")).size();
 //		System.out.println(total);
-		
+
 		Thread.sleep(2000);
 		crossIcon.click();
 
 		System.out.println("Successfuly click on cross icon");
 
-		// driver.switchTo().defaultContent();
+		driver.switchTo().defaultContent();
+
+		System.out.println("Successfuly reach on defualt page");
 	}
 
-	public void login(String username, String password) {
+	public StudentDashBoard login(String username, String password) throws InterruptedException {
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
+		((JavascriptExecutor) driver).executeScript("scroll(0,200)");
 		loginField.sendKeys(username);
+		
+		System.out.println("Successfully Enter the enter the user name");
+		
 		passwordfield.sendKeys(password);
-
+		System.out.println("Successfully Enter the enter the user name");
+		
+		Thread.sleep(2000);
 		signIN.click();
 
-		// return new StudentDashBoard();
+		
+		System.out.println("Successfully Click on Sing in Button");
+		return new StudentDashBoard();
 
 	}
 
-	
-	
-	public StudentDashBoard login_purchase(String username, String password) {
+	public void login_purchase(String username, String password) {
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
@@ -111,8 +120,8 @@ public class LoginPage extends TestBase {
 
 		signIN.click();
 
-		 return new StudentDashBoard();
+		//return new StudentDashBoard();
 
 	}
-	
+
 }
