@@ -48,20 +48,18 @@ public class CustomerDetailsPageTest extends TestBase {
 	public ExtentHtmlReporter htmlreporter;
 	public ExtentReports extent;
 	public static ExtentTest logger;
-	//ExtentReportListner extentReport;
+	// ExtentReportListner extentReport;
 
 	public CustomerDetailsPageTest() {
 
 		super();
 
 	}
-	  
-	
+
 	@BeforeTest
 	public void setExtent() {
 
-		htmlreporter = new ExtentHtmlReporter(
-				System.getProperty("user.dir") + "/test-output/ArunTesting.html");// +
+		htmlreporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/ArunTesting.html");// +
 
 		extent = new ExtentReports();
 		extent.attachReporter(htmlreporter);
@@ -71,27 +69,24 @@ public class CustomerDetailsPageTest extends TestBase {
 
 		// avent.getConfigurationStore().s
 	}
-	  
-		public static String getScreenShot(WebDriver driver, String screenshotName) throws IOException {
-			// String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 
-			TakesScreenshot ts = (TakesScreenshot) driver;
+	public static String getScreenShot(WebDriver driver, String screenshotName) throws IOException {
+		// String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 
-			File src = ts.getScreenshotAs(OutputType.FILE);
+		TakesScreenshot ts = (TakesScreenshot) driver;
 
-			String destination = System.getProperty("user.dir") + "/FailedScreenshot/" + System.currentTimeMillis()
-					+ ".png";
+		File src = ts.getScreenshotAs(OutputType.FILE);
 
-			File finaldestination = new File(destination);
+		String destination = System.getProperty("user.dir") + "/FailedScreenshot/" + System.currentTimeMillis()
+				+ ".png";
 
-			FileUtils.copyFile(src, finaldestination);
+		File finaldestination = new File(destination);
 
-			return destination;
+		FileUtils.copyFile(src, finaldestination);
 
-		}
+		return destination;
 
-
-	
+	}
 
 	@BeforeMethod
 
@@ -100,9 +95,9 @@ public class CustomerDetailsPageTest extends TestBase {
 		initialaztion();
 		homePage = new HomePage();
 		aakashutil = new TestUtilAakash();
-		aakashutil.switchframe();
-		homePage.clickOnCrossIcon();
-		aakashutil.defaultframe();
+		//aakashutil.switchframe();
+//		homePage.clickOnCrossIcon();
+//		aakashutil.defaultframe();
 		homePage.clickOnCourseLink();
 		coursesPage = new CoursesPage();
 		coursesPage.clickonEngineering();
@@ -119,8 +114,8 @@ public class CustomerDetailsPageTest extends TestBase {
 	public void validateCheckOut(String chooseClass, String chooseState, String chooseCenters, String stu_name,
 			String stu_last, String Parent_name, String Parent_Mobile, String Parent_email, String street_address,
 			String city, String pincode, String state) throws InterruptedException {
-		
-		logger=extent.createTest("Aakash Website Course Purchase Journey");
+
+		logger = extent.createTest("Aakash Website Course Purchase Journey");
 		coursesPage.selectEngineeringcourses(chooseClass, chooseState, chooseCenters);
 		coursesPage.clickOnSearchedCourses();
 		searchedPage.clickOnPayRegistration();
@@ -133,9 +128,8 @@ public class CustomerDetailsPageTest extends TestBase {
 //		
 		cartpage.clickOnProceedToCheckOut();
 		Assert.assertEquals(driver.getTitle(), "Checkout | AESL");
-
-		//customerdtl.fill_shipping_information(stu_name, stu_last, Parent_name, Parent_Mobile, Parent_email,
-				//street_address, city, pincode, state);
+		customerdtl.fill_shipping_information(stu_name, stu_last, Parent_name, Parent_Mobile, Parent_email,
+				street_address, city, pincode, state);
 
 	}
 
@@ -152,19 +146,17 @@ public class CustomerDetailsPageTest extends TestBase {
 
 			logger.log(Status.FAIL, result.getThrowable().getMessage(),
 					MediaEntityBuilder.createScreenCaptureFromPath(screnshotPath).build());
-			
-			
 
 		}
 
 		else if (result.getStatus() == ITestResult.SKIP) {
 			logger.log(Status.SKIP, "Testcase Skipped" + result.getName());
-			
+
 		} else if (result.getStatus() == ITestResult.SUCCESS) {
 			logger.log(Status.PASS, "Testcase Passed" + result.getName());
 
 		}
-		
+
 		driver.quit();
 	}
 

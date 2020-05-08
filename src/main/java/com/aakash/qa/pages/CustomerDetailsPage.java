@@ -11,14 +11,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Sleeper;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aakash.qa.base.TestBase;
 import com.aakash.qa.utill.TestUtilAakash;
-import com.google.auto.common.Visibility;
-
-import net.bytebuddy.asm.Advice.Argument;
 
 public class CustomerDetailsPage extends TestBase {
 
@@ -122,12 +118,10 @@ public class CustomerDetailsPage extends TestBase {
 		lasttName.sendKeys(stu_last);
 		Thread.sleep(4000);
 
-		dateofBirth.clear();
-		dateofBirth.click();
 		Thread.sleep(2000);
 
 		dateofBirth.clear();
-	
+
 		selectMonth.click();
 		System.out.println("Successfully click on Month drop down");
 
@@ -135,7 +129,7 @@ public class CustomerDetailsPage extends TestBase {
 
 		select_month.selectByVisibleText(prop.getProperty("dob_month"));
 
-		// System.out.println("Month Value is" + selectMonth.getText());
+		System.out.println("Month Value is" + selectMonth.getText());
 
 		System.out.println("Successfully Month Value selected");
 
@@ -144,44 +138,41 @@ public class CustomerDetailsPage extends TestBase {
 		Thread.sleep(5000);
 		select_year.selectByVisibleText(prop.getProperty("dob_year"));
 		System.out.println("Successfully year Value selected");
-		// System.out.println(selectYear.getText());
-
-		/*
-		 * Author- Arun Kumar Pandey Code understand from Naveen date-17 April status-
-		 * code not working due to xapth issue
-		 * 
-		 */
-
-//		String beforeXpath = "//a[@class='ui-state-default ui-state-hover']/html[1]/body[1]/div[5]/table[1]/tbody[1]/tr[";
+		System.out.println(selectYear.getText());
 //
-//		String afterXpath = "]/td[";
+//		/*
+//		 * Author- Arun Kumar Pandey Code understand from Naveen date-17 April status-
+//		 * code not working due to xapth issue
+//		 * 
+//		 */
 //
-//		final int totalweekday = 7;
+////		String beforeXpath = "//a[@class='ui-state-default ui-state-hover']/html[1]/body[1]/div[5]/table[1]/tbody[1]/tr[";
+////
+////		String afterXpath = "]/td[";
+////
+////		final int totalweekday = 7;
+////
+////		for (int rowNum = 1; rowNum <= 7; rowNum++) {
+////
+////			for (int colNum = 4; colNum <= totalweekday; colNum++) {
+////
+////				String dayVal= driver.findElement(By.xpath(beforeXpath+rowNum+afterXpath+colNum+"]/a[1]")).getText();
+////				
+////				System.out.println(dayVal);
+////				
+////			}
+////
+////		}
 //
-//		for (int rowNum = 1; rowNum <= 7; rowNum++) {
-//
-//			for (int colNum = 4; colNum <= totalweekday; colNum++) {
-//
-//				String dayVal= driver.findElement(By.xpath(beforeXpath+rowNum+afterXpath+colNum+"]/a[1]")).getText();
-//				
-//				System.out.println(dayVal);
-//				
-//			}
-//
-//		}
-
-		/*
-		 * /* Author- Arun Kumar Pandey Code sourse -SDET Youtube date-19 April status-
-		 * code Properly working
-		 * 
-		 */
-	
+//		/*
+//		 * /* Author- Arun Kumar Pandey Code sourse -SDET Youtube date-19 April status-
+//		 * code Properly working
+//		 * 
+//		 */
+//	
 		Thread.sleep(5000);
 		List<WebElement> list = driver.findElements(By.xpath("/html[1]/body[1]/div[7]/table[1]/tbody[1]/tr/td"));
 
-//		WebDriverWait wait1 = new WebDriverWait(driver, 4000);
-//		wait1.until(ExpectedConditions.visibilityOf((WebElement) list));
-		
 		for (WebElement e : list) {
 
 			String date = e.getText();

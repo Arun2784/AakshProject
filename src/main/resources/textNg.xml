@@ -16,6 +16,7 @@
 		<classes>
 
 			<class name="com.aakash.qa.testcases.LoginPageTest" />
+				<class name="com.aakash.qa.testcases.LoginPageTest" />
 
 
 

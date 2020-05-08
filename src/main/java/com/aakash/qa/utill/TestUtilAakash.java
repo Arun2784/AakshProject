@@ -11,9 +11,16 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aakash.qa.base.TestBase;
+import com.aakash.qa.pages.HomePage;
 
 public class TestUtilAakash extends TestBase {
 
@@ -22,15 +29,30 @@ public class TestUtilAakash extends TestBase {
 	public static String TESTDATA_SHEET_PATH = "D:\\Core Java\\AakashWebsiteProject\\src\\main\\java\\com\\aakash\\qa\\testdata\\AakashProjectData.xlsx";
 	static Workbook book;
 	static Sheet sheet;;
+	public HomePage homepage;
+	public WebDriverWait wait;
 
 	public void switchframe() {
 
-		driver.switchTo().frame(1);
+		try {
+			driver.switchTo().frame(1);
+			driver.findElement(By.xpath("//div[contains(@class,'icon close')]")).click();
+			driver.switchTo().defaultContent();
+		} catch (NoSuchElementException e) {
+
+			System.out.println("No cross icon found");
+
+		} catch (NoSuchFrameException e1) {
+
+			System.out.println("No Frame found");
+
+		}
 	}
 
 	public void defaultframe() {
 
 		driver.switchTo().defaultContent();
+
 	}
 
 	public void swicthLoginPageFrame() throws InterruptedException {
@@ -42,22 +64,18 @@ public class TestUtilAakash extends TestBase {
 		driver.switchTo().frame(fram);
 		System.out.println("Successfuly reach on frame");
 	}
-	
-	
+
 	public void chatwindowFrame() throws InterruptedException {
 
-		
 		Thread.sleep(3000);
 		System.out.println("Starting for chat frame");
 //		WebElement chatfram = driver.findElement(By.id("//div[@class='jx_ui_Widget chat_log_wrapper']"));
 //		System.out.println("Successfully reach on chat windwo frame1");
 //		driver.switchTo().frame(chatfram);
-		
+
 		driver.switchTo().frame(1);
 		System.out.println("Successfully reach on chat windwo frame2");
 	}
-	
-	
 
 	public static Object[][] getAakashTestData(String sheetName1) throws InvalidFormatException {
 		FileInputStream file = null;

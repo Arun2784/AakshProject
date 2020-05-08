@@ -31,9 +31,11 @@ public class LoginPageTest extends TestBase {
 		homePage = new HomePage();
 		aakashutil = new TestUtilAakash();
 		loginpage = new LoginPage();
-		 aakashutil.switchframe();
-		 homePage.clickOnCrossIcon();
-		 aakashutil.defaultframe();
+		aakashutil.switchframe();
+
+		System.out.println("No Frame Appear on home page");
+		// homePage.clickOnCrossIcon();
+		// aakashutil.defaultframe();
 
 	}
 

@@ -8,7 +8,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.aakash.qa.utill.TestUtilAakash;
 
@@ -45,6 +48,9 @@ public class TestBase {
 
 		if (browsername.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "E:\\Selenium Training\\chromedriver_win32//chromedriver.exe");
+			
+			 System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+//			 Logger.getLogger("org.openqa.selenium").setLevel(Level.OFF);
 			driver = new ChromeDriver();
 
 		}
@@ -52,9 +58,13 @@ public class TestBase {
 		else if (browsername.equals("firefox")) {
 
 			System.setProperty("webdriver.geco.driver", "E:\\\\Selenium Training//geco.exe");
-
-			driver = new FirefoxDriver();
-
+//			 System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+//			 Logger.getLogger("org.openqa.selenium").setLevel(Level.OFF);
+			
+			
+			 System.setProperty("webdriver.chrome.silentOutput", "true");
+			  driver = new FirefoxDriver();
+		
 		}
 
 		driver.manage().window().maximize();
