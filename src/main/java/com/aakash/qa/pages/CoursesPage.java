@@ -81,7 +81,7 @@ public class CoursesPage extends TestBase {
 			throws InterruptedException {
 
 		Thread.sleep(3000);
-		
+
 		Select classes1 = new Select(AakashClasses);
 
 		classes1.selectByVisibleText(selectClasses);
@@ -93,16 +93,14 @@ public class CoursesPage extends TestBase {
 
 		Thread.sleep(5000);
 		// This will scroll the page till the element is found
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;		
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", clickOnApply);
 		Thread.sleep(5000);
-		
+
 		Select centers1 = new Select(AakashCenter);
 
 		centers1.selectByVisibleText(selectCenters);
-
-		
 
 		System.out.println("**********Before Click on Apply");
 
@@ -114,8 +112,7 @@ public class CoursesPage extends TestBase {
 
 		System.out.println("**********After Click on Apply");
 
-		
-		//return new SearchedCoursePage();
+		// return new SearchedCoursePage();
 	}
 
 //	public void clicnOnApplyButton() throws InterruptedException {
@@ -157,7 +154,7 @@ public class CoursesPage extends TestBase {
 
 	}
 
-	public  SearchedCoursePage clickOnSearchedCourses() throws InterruptedException {
+	public SearchedCoursePage clickOnSearchedCourses() throws InterruptedException {
 
 		Thread.sleep(5000);
 
